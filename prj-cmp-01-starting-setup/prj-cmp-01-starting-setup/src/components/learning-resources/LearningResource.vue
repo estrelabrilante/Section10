@@ -1,6 +1,6 @@
 <template>
   <li>
-    <div>
+    <base-card>
       <header>
         <!-- Title -->
         <h3>{{ title }}</h3>
@@ -8,13 +8,14 @@
           Delete
         </button>
       </header>
-    </div>
-    <!-- Description -->
-    <p>{{ description }}</p>
-    <nav>
-      <!-- Link -->
-      <a v-bind:href="link">View Resource</a>
-    </nav>
+
+      <!-- Description -->
+      <p>{{ description }}</p>
+      <nav>
+        <!-- Link -->
+        <a v-bind:href="link">View Resource</a>
+      </nav>
+    </base-card>
   </li>
 </template>
 <script>
