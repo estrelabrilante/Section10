@@ -1,21 +1,11 @@
 <template>
-  <ul>
-    <!-- bind all props and provide values to all props in learning resources -->
-    <learning-resources
-      v-for="res in storedResources"
-      :key="res.id"
-      :title="res.title"
-      :description="res.describtion"
-      :link="res.link"
-    >
-    </learning-resources>
-  </ul>
+  <stored-resources :resources="storedResources"> </stored-resources>
 </template>
 <script>
-import LearningResources from './components/learning-resources/LearningResource.vue';
+import StoredResources from './components/learning-resources/StoredResources.vue';
 export default {
   components: {
-    LearningResources
+    StoredResources
   },
 
   data() {
@@ -24,13 +14,13 @@ export default {
         {
           id: 'official-guide',
           title: 'Official Guide',
-          describtion: 'The Official Vue js documentation',
+          description: 'The Official Vue js documentation',
           link: 'https://vuejs.org'
         },
         {
           id: 'Google',
           title: 'Google',
-          describtion: 'Learn to google',
+          description: 'Learn to google',
           link: 'https://google.org'
         }
       ]
@@ -38,3 +28,18 @@ export default {
   }
 };
 </script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+}
+</style>
