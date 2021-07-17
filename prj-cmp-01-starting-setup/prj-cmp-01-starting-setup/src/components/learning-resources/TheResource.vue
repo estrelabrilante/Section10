@@ -75,11 +75,14 @@ export default {
       this.selectedTab = 'stored-resources';
     },
     removeResource(resId) {
-      this.storedResources = this.storedResources.filter(
-        res => res.id !== resId
-      );
+      // this.storedResources = this.storedResources.filter(
+      //   res => res.id !== resId
+      // );
       console.log(this.storedResources);
       console.log(this.storedResources.length);
+      // get index , pushing and unshifting
+      const resIndex = this.storedResources.findIndex(res => res.id === resId);
+      this.storedResources.splice(resIndex, 1);
     }
   }
 };
