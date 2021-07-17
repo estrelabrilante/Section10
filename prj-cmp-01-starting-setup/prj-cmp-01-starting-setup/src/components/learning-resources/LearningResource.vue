@@ -4,9 +4,9 @@
       <header>
         <!-- Title -->
         <h3>{{ title }}</h3>
-        <button>
+        <base-button mode="flat">
           Delete
-        </button>
+        </base-button>
       </header>
 
       <!-- Description -->
