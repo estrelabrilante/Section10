@@ -4,7 +4,7 @@
       <header>
         <!-- Title -->
         <h3>{{ title }}</h3>
-        <base-button mode="flat">
+        <base-button mode="flat" @click="deleteResource(id)">
           Delete
         </base-button>
       </header>
@@ -21,7 +21,8 @@
 <script>
 export default {
   // with props : gets external data by making components reusable and configurable
-  props: ['title', 'description', 'link']
+  props: ['id', 'title', 'description', 'link'],
+  inject: ['deleteResource']
 };
 </script>
 <style scoped>
