@@ -1,25 +1,27 @@
 <template>
-  <!--close the base-dialog by clicking on backdrop  -->
-  <div @click="$emit('close')"></div>
-  <!-- built in HTML element : dialog and open attribute-->
-  <dialog open>
-    <header>
-      <!-- named slots -->
-      <slot name="head">
-        <h2>
-          {{ title }}
-        </h2>
-      </slot>
-    </header>
-    <!-- main content of dialoge -->
-    <section>
-      <slot> </slot>
-    </section>
-    <menu>
-      <slot name="actions"> </slot>
-      <base-button @click="$emit('close')">close </base-button>
-    </menu>
-  </dialog>
+  <teleport to="body">
+    <!--close the base-dialog by clicking on backdrop  -->
+    <div @click="$emit('close')"></div>
+    <!-- built in HTML element : dialog and open attribute-->
+    <dialog open>
+      <header>
+        <!-- named slots -->
+        <slot name="head">
+          <h2>
+            {{ title }}
+          </h2>
+        </slot>
+      </header>
+      <!-- main content of dialoge -->
+      <section>
+        <slot> </slot>
+      </section>
+      <menu>
+        <slot name="actions"> </slot>
+        <base-button @click="$emit('close')">close </base-button>
+      </menu>
+    </dialog>
+  </teleport>
 </template>
 <script>
 import BaseButton from './BaseButton.vue';
